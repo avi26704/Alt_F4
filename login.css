@@ -16,7 +16,7 @@ body {
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
   height: 95vh;
-  margin: -20px 0 50px;
+  margin-top: 15px;
 }
 
 .firstpage{
@@ -25,12 +25,12 @@ body {
   position: absolute;
   z-index: 1;
   background: url(./Images/background_image.jpg) no-repeat center ;
-  background-size: 1440px 772px;
+  background-size: 1920px 772px;
 }
 
 .loginform{
   position: relative;
-  left: 23%;
+  left: 21.5%;
   width: 800px;
 }
 
@@ -39,7 +39,7 @@ body {
   height: 80px;
   width: 150px;
   left: 0.1%;
-  top: 4%;
+  top: 1%;
 }
 
 h1 {
@@ -51,6 +51,7 @@ h1 {
   margin-top: 80px;
   text-align: center;
   color: #fff;
+  font-size: 30px;
 }
 
 p {
@@ -289,3 +290,4 @@ input::-webkit-inner-spin-button {
   height: 40px;
   width: 40px;
 }
+
