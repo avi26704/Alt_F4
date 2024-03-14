@@ -7,12 +7,10 @@
     <link rel="stylesheet" href="login.css" />
   </head>
   <body>
-    <nav>
-      <div class="navbar">
-        <img src="" alt="" />
-      </div>
+    <nav class="navbar">
+      <img src="./Images/SolVIT_Logo.png" alt="logo_Image" />
     </nav>
-    <h2>Welcome Vitians !!</h2>
+    <h2 class="heading">Welcome Vitians !!</h2>
     <div class="container" id="container">
       <div class="form-container sign-up-container">
         <form action="#">
@@ -49,5 +47,20 @@
         </div>
       </div>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const signUpButton = document.getElementById("signUp");
+        const signInButton = document.getElementById("signIn");
+        const container = document.getElementById("container");
+
+        signUpButton.addEventListener("click", function () {
+          container.classList.add("right-panel-active");
+        });
+
+        signInButton.addEventListener("click", function () {
+          container.classList.remove("right-panel-active");
+        });
+      });
+    </script>
   </body>
 </html>
