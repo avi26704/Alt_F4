@@ -7,50 +7,97 @@
     <link rel="stylesheet" href="login.css" />
   </head>
   <body>
-    <nav class="navbar">
-      <img src="./Images/SolVIT_Logo.png" alt="logo_Image" />
-    </nav>
-    <h2 class="heading">Welcome Vitians !!</h2>
-    <div class="container" id="container">
-      <div class="form-container sign-up-container">
-        <form action="#">
-          <h1>Sign up</h1>
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <button id="signIn">Sign Up</button>
-        </form>
+    <header class="firstpage">
+      <div>
+        <img class="navbar" src="./Images/SolVIT_Logo.png" alt="logo_Image" />
       </div>
-      <div class="form-container sign-in-container">
-        <form action="#">
-          <h1>Sign in</h1>
-          <input type="text" placeholder="Register Number" />
-          <input type="password" placeholder="Password" />
-          <a href="#">Forgot your password?</a>
-          <button id="SignUp">Sign In</button>
-        </form>
-      </div>
-      <div class="overlay-container">
-        <div class="overlay">
-          <div class="overlay-panel overlay-left">
-            <h1>Welcome Back!</h1>
-            <p>
-              To keep connected with us please login with your personal info
-            </p>
-            <button class="ghost" id="signIn">Sign In</button>
+      <h2 class="heading">Welcome Vitians !!</h2>
+      <div class="loginform">
+        <div class="container" id="container">
+          <div class="form-container sign-up-container">
+            <!-- Form -->
+            <form action="#">
+              <h2>Sign up</h2>
+              <input type="text" placeholder="Name" />
+
+              <div class="blockroom">
+                <input type="text" placeholder="Register Number" />
+                <!-- Gender -->
+                <select class="blockname" value="Gender" name="Gender">
+                  <option value="null">Gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+
+              <input type="email" placeholder="College Email" />
+              <input type="password" placeholder="Password" />
+              <input type="phone" placeholder="Phone Number" />
+
+              <div class="blockroom">
+                <select class="blockname" value="block" name="block">
+                  <option value="null">Block</option>
+                  <option value="A">A BLock</option>
+                  <option value="B">B BLock</option>
+                  <option value="C">C BLock</option>
+                  <option value="D">D Block</option>
+                  <option value="D">D Annex Block</option>
+                  <option value="E">E Block</option>
+                  <option value="F">F Block</option>
+                  <option value="G">G Block</option>
+                  <option value="H">H Block</option>
+                  <option value="J">J Block</option>
+                  <option value="K">K Block</option>
+                  <option value="L">L Block</option>
+                  <option value="M">M Block</option>
+                  <option value="N">N Block</option>
+                  <option value="P">P Block</option>
+                  <option value="Q">Q Block</option>
+                  <option value="R">R Block</option>
+                </select>
+                <input
+                  type="number"
+                  placeholder="Room Number"
+                  class="roomnum"
+                />
+              </div>
+
+              <button id="signIn">Sign Up</button>
+            </form>
           </div>
-          <div class="overlay-panel overlay-right">
-            <h1>Hello, Friend!</h1>
-            <p>Enter your personal details and solve all your problems !!!</p>
-            <button class="ghost" id="signUp">Sign Up</button>
+          <div class="form-container sign-in-container">
+            <form action="#">
+              <h1>Sign in</h1>
+              <input type="text" placeholder="Register Number" />
+              <input type="password" placeholder="Password" />
+              <a href="#">Forgot your password?</a>
+              <button id="SignUp">Sign In</button>
+            </form>
+          </div>
+          <div class="overlay-container">
+            <div class="overlay">
+              <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>
+                  To keep connected with us please login with your personal info
+                </p>
+                <button class="ghost" id="signIn2">Sign In</button>
+              </div>
+              <div class="overlay-panel overlay-right">
+                <h1>Don't have an account??</h1>
+                <p>Sign Up and get your credentials to avail the services!!</p>
+                <button class="ghost" id="signUp">Sign Up</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </header>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const signUpButton = document.getElementById("signUp");
         const signInButton = document.getElementById("signIn");
+        const signInButton2 = document.getElementById("signIn2");
         const container = document.getElementById("container");
 
         signUpButton.addEventListener("click", function () {
@@ -58,6 +105,10 @@
         });
 
         signInButton.addEventListener("click", function () {
+          container.classList.remove("right-panel-active");
+        });
+
+        signInButton2.addEventListener("click", function () {
           container.classList.remove("right-panel-active");
         });
       });
