@@ -86,6 +86,19 @@ button {
   transition: transform 80ms ease-in;
 }
 
+.ghost:hover{
+  background-color: #fff;
+  color: #e67e22;
+  cursor: pointer;
+}
+
+.SignInButton:hover{
+  border-color: #000;
+  background-color: #eb984e;
+  color: #fff;
+  cursor: pointer;
+}
+
 button:active {
   transform: scale(0.95);
 }
@@ -291,3 +304,43 @@ input::-webkit-inner-spin-button {
   width: 40px;
 }
 
+.popup{
+  z-index: 120;
+  width: 400px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #000;
+  position: absolute;
+  top: 5%;
+  left: 475px;
+  transform: translate(-50%,-50%) scale(0.1);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #000;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+
+.openpopup{
+  visibility: visible;
+  transform: translate(-50%,-50%) scale(1);
+  left: 650px;
+  top: 325px;
+}
+
+.popup p{
+  font-size: large;
+}
+
+.popbutton{
+  background-color: #fff;
+  color: #000;
+  border-color: #000;
+}
+
+.popbutton:hover{
+  cursor: pointer;
+  background-color: #000;
+  border-color: #000;
+  color: #fff;
+}

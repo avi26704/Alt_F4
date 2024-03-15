@@ -6,8 +6,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="login.css" />
   </head>
-  <body>
-    <header class="firstpage">
+  <body id="body">
+    <header class="firstpage" id="firstpage">
       <div>
         <img class="navbar" src="./Images/SolVIT_Logo.png" alt="logo_Image" />
       </div>
@@ -62,7 +62,7 @@
                 />
               </div>
 
-              <button class="signIn" id="signIn">Sign Up</button>
+              <button class="SignInButton" id="signIn">Sign Up</button>
             </form>
           </div>
           <div class="form-container sign-in-container">
@@ -70,8 +70,8 @@
               <h1>Sign in</h1>
               <input type="text" placeholder="Register Number" />
               <input type="password" placeholder="Password" />
-              <a href="#">Forgot your password?</a>
-              <button id="SignUp">Sign In</button>
+              <a href="#" onclick="openpopup()">Forgot your password?</a>
+              <button class="SignInButton" id="SignUp">Sign In</button>
             </form>
           </div>
           <div class="overlay-container">
@@ -86,14 +86,32 @@
               <div class="overlay-panel overlay-right">
                 <h1>Don't have an account??</h1>
                 <p>Sign Up and get your credentials to avail the services!!</p>
+                <br />
                 <button class="ghost" id="signUp">Sign Up</button>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="popup" id="popup">
+        <p>Please Enter Your Registered Email Id</p>
+        <input type="email" name="" id="" placeholder="Registered Email Id" />
+        <button class="popbutton" type="submit" onclick="closepopup()">
+          submit
+        </button>
+      </div>
     </header>
     <script>
+      let popup = document.getElementById("popup");
+      function openpopup() {
+        popup.classList.add("openpopup");
+      }
+
+      function closepopup() {
+        popup.classList.remove("openpopup");
+        window.location.reload();
+      }
+
       document.addEventListener("DOMContentLoaded", function () {
         const signUpButton = document.getElementById("signUp");
         const signInButton = document.getElementById("signIn");
