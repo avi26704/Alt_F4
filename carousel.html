@@ -130,7 +130,84 @@
       <!-- time running -->
       <div class="time"></div>
     </div>
-    <hr class="horiz-line" />
+
+    <!-- Form1 -->
+    <form action="#" id="mess" class="finform">
+      <h2>Select Food</h2>
+      <div class="Mess">
+        <span style="font-size: 18px;">Select Food Type : </span>
+        <select class="cleaning" value="cleaning" name="cleaning">
+          <option value="null">Food Type</option>
+          <option value="Veg">Veg</option>
+          <option value="Nonveg">Non-Veg</option>
+        </select><br>
+        <label><span style="font-size: 18px;">Upload Prescription : </span></label><input type="file" />
+      </div>
+      <button class="SignInButton" id="signIn">Submit</button>
+    </form>
+
+<!-- From2 -->
+<form action="#" id="cleaning" class="finform">
+  <h2>Select Cleaning Service</h2>
+  <div class="cleaning">
+    <span style="font-size: 18px;">Select Type of Cleaning : </span> <select class="cleaning" value="cleaning" name="cleaning">
+      <option value="null">Cleaning Type</option>
+      <option value="Mopping">Mopping</option>
+      <option value="Swepping">Swepping</option>
+      <option value="Sweep and Mop">Sweep and Mop</option>
+      <option value="Window Cleaning">Window Cleaning</option>
+    </select><br><br>
+    <span style="font-size: 18px;">Choose Time Slot : </span><select class="cleaning" value="cleaning" name="cleaning">
+      <option value="null">Slot</option>
+      <option value="slot1">2pm to 3pm</option>
+      <option value="slot2">3pm to 4pm</option>
+      <option value="slot3">4pm to 5pm</option>
+      <option value="slot4">5pm to 6pm</option>
+    </select>
+  </div>
+  <button class="SignInButton" id="signIn">Submit</button>
+</form>
+
+<!-- From3 -->
+<form action="#" id="medicine" class="finform">
+  <h2>Medical Service</h2>
+  <div class="medicine">
+    <span style="font-size: 18px;">Select Medicine : </span>
+    <select class="medicine" value="medicine" name="medicine">
+      <option>Select</option>
+      <option>Diarrhea Loperamide </option>
+      <option>Paracetamol</option>
+      <option>Antibiotic</option>
+      <option>Antacid</option>
+      <option>Anti Vomiting Dexamethasone</option>
+      <option>Cofsils</option>
+      <option>ORS</option>
+      <option>Vicks</option>
+    </select><br>
+    <label><span style="font-size: 18px;">Upload Prescription : </span><input type="file" /></label>
+  </div>
+  <button class="SignInButton" id="signIn">Submit</button>
+</form>
+
+<!-- From4 -->
+<form action="#" id="electrical" class="finform">
+  <h2>Electrical Issues</h2>
+  <div class="cleaning">
+    <span style="font-size: 18px;">Select Type of Issue : </span> <select class="cleaning" value="cleaning" name="cleaning">
+      <option value="null">Select</option>
+      <option value="Mopping">Fan</option>
+      <option value="Swepping">AC</option>
+      <option value="Sweep and Mop">Switch Board</option>
+      <option value="Window Cleaning">Lights</option>
+    </select>
+    <br>   
+  </div>
+  <button class="SignInButton" id="signIn">Submit</button>
+</form>
+
+<footer class="footer"><p>In case of any discripancy email to  name@gmail.com</p></footer>
+
+    <!-- <hr class="horiz-line" /> -->
     <script>
       //step 1: get DOM
       let nextDom = document.getElementById("next");
