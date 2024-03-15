@@ -68,10 +68,12 @@
           <div class="form-container sign-in-container">
             <form action="#">
               <h1>Sign in</h1>
-              <input type="text" placeholder="Register Number" />
-              <input type="password" placeholder="Password" />
+              <input type="text" placeholder="Register Number" required />
+              <input type="password" placeholder="Password" required />
               <a href="#" onclick="openpopup()">Forgot your password?</a>
-              <button class="SignInButton" id="SignUp">Sign In</button>
+              <button class="SignInButton" id="SignUp" onclick="opencarousel()">
+                Sign In
+              </button>
             </form>
           </div>
           <div class="overlay-container">
@@ -110,6 +112,10 @@
       function closepopup() {
         popup.classList.remove("openpopup");
         window.location.reload();
+      }
+
+      function opencarousel() {
+        window.open("carousel.html");
       }
 
       document.addEventListener("DOMContentLoaded", function () {
