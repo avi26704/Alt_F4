@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="carousel.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1>Welcome User</h1>
+      </nav>
+    </header>
+
+    <!-- carousel -->
+    <div class="carousel">
+      <!-- list item -->
+      <div class="list">
+        <div class="item">
+          <img src="./Images/cleaning_services.png" />
+          <div class="content">
+            <div class="title">Cleaning Services</div>
+            <div class="topic">Get Your Rooms Cleaned!!</div>
+            <div class="des">
+              <!-- lorem 50 -->
+              Our Cleaning Services platform transforms hostel maintenance at
+              VIT by providing a centralized system for reporting and scheduling
+              tasks. Students can easily request services, and our streamlined
+              process ensures fair resource allocation, enhancing hostel living
+              with cleanliness and hygiene.
+            </div>
+            <div class="buttons">
+              <button class="buttons1">Fill Form</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="./Images/Electric_Services.png" />
+          <div class="content">
+            <div class="title">ELectrical Services</div>
+            <div class="topic">Get Your Electric related Problems Sorted</div>
+            <div class="des">
+              Our Electrical Services platform enables quick reporting and
+              resolution of issues for VIT hostel residents. Easy logging of
+              concerns ensures swift assessment and maintenance. This ensures a
+              reliable and safe electrical system, supporting a conducive
+              environment for study and relaxation.
+            </div>
+            <div class="buttons">
+              <button class="buttons1">Fill Form</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="./Images/Food_Services.png" />
+          <div class="content">
+            <div class="title">Mess Food Services</div>
+            <div class="topic">Ill and want mess food to Room?</div>
+            <div class="des">
+              Our Mess Food Delivery system offers VIT hostel residents a
+              convenient way to access nutritious meals during illness or other
+              situations. Students can swiftly request meals through our
+              user-friendly platform, expediting approval and ensuring timely
+              delivery to hostel rooms, prioritizing student health and welfare.
+            </div>
+            <div class="buttons">
+              <button class="buttons1">Fill Form</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="./Images/doctor2.jpg" />
+          <div class="content">
+            <div class="title">Medical Services</div>
+            <div class="topic">Not Well and Want Medicines?</div>
+            <div class="des">
+              Our Medical Delivery Service enhances student access to essential
+              medications at VIT by offering a seamless and efficient ordering
+              and delivery process. Through our integrated platform, students
+              can conveniently request necessary medications 24/7 from the
+              Chettinad Health Centre Pharmacy, specifying their requirements
+              and delivery preferences.
+            </div>
+            <div class="buttons">
+              <button class="buttons1">Fill Form</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- list thumnail -->
+      <div class="thumbnail">
+        <div class="item">
+          <img src="./Images/cleaning_services.png" />
+          <div class="content">
+            <div class="title">Cleaning Services</div>
+            <div class="description">Get Your Rooms Cleaned!!</div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="./Images/Electric_Services.png" />
+          <div class="content">
+            <div class="title">Electrical Services</div>
+            <div class="description">
+              Get Your Electricity Problems Sorted!!
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="./Images/Food_Services.png" />
+          <div class="content">
+            <div class="title">Want Food when you are ill?</div>
+            <div class="description">Send Your request to the supervisor.</div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="./Images/doctor2.jpg" />
+          <div class="content">
+            <div class="title">Need Some Medicines for Emergency?</div>
+            <div class="description">Get the medicines delivered ASAP!</div>
+          </div>
+        </div>
+      </div>
+      <!-- next prev -->
+
+      <div class="arrows">
+        <button id="prev">&larr;</button>
+        <button id="next">&rarr;</button>
+      </div>
+      <!-- time running -->
+      <div class="time"></div>
+    </div>
+    <hr class="horiz-line" />
+    <script>
+      //step 1: get DOM
+      let nextDom = document.getElementById("next");
+      let prevDom = document.getElementById("prev");
+
+      let carouselDom = document.querySelector(".carousel");
+      let SliderDom = carouselDom.querySelector(".carousel .list");
+      let thumbnailBorderDom = document.querySelector(".carousel .thumbnail");
+      let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(".item");
+      let timeDom = document.querySelector(".carousel .time");
+
+      thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+      let timeRunning = 3;
+      let timeAutoNext = 40000;
+
+      nextDom.onclick = function () {
+        showSlider("next");
+      };
+
+      prevDom.onclick = function () {
+        showSlider("prev");
+      };
+      let runTimeOut;
+      let runNextAuto = setTimeout(() => {
+        next.click();
+      }, timeAutoNext);
+      function showSlider(type) {
+        let SliderItemsDom = SliderDom.querySelectorAll(
+          ".carousel .list .item"
+        );
+        let thumbnailItemsDom = document.querySelectorAll(
+          ".carousel .thumbnail .item"
+        );
+
+        if (type === "next") {
+          SliderDom.appendChild(SliderItemsDom[0]);
+          thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+          carouselDom.classList.add("next");
+        } else {
+          SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+          thumbnailBorderDom.prepend(
+            thumbnailItemsDom[thumbnailItemsDom.length - 1]
+          );
+          carouselDom.classList.add("prev");
+        }
+        clearTimeout(runTimeOut);
+        runTimeOut = setTimeout(() => {
+          carouselDom.classList.remove("next");
+          carouselDom.classList.remove("prev");
+        }, timeRunning);
+
+        clearTimeout(runNextAuto);
+        runNextAuto = setTimeout(() => {
+          next.click();
+        }, timeAutoNext);
+      }
+    </script>
+  </body>
+</html>
