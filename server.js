@@ -1,10 +1,15 @@
 const express = require('express');
 const app = express(); // initializing an app using Express
+const dotenv = require("dotenv").config(); // used to import environment variables
+const errorHandler = require("./middleware/errorhandler");
+const connectDB = require("./config/dbConnection"); // initializing function to connect to MongoDB
 
+connectDB(); // connecting to MongoDB
 
-
-app.use(express.json()); // provides a body-parser for PUSH requests
+// app.use() is used whenever we need a middleware
+app.use(express.json()); // provides a body-parser which parses the data received from client side to send it to server
 app.use("/",require("./routes/userRoutes"));
+app.use(errorHandler);
 
 // EXAMPLES OF ROUTES
 
@@ -17,20 +22,10 @@ app.use("/",require("./routes/userRoutes"));
 // })
 
 
-const dotenv = require("dotenv").config();
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
 
-const mongoose = require('mongoose');
-const uri = 'mongodb://localhost:27017/Users';
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    console.log('Connected to MongoDB successfully');
-    // Perform database operations here
-  })
-  .catch((err) => {
-    console.error('Error connecting to MongoDB:', err);
-  });
+

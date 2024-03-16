@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
-    Name: {
+const userSchema = new mongoose.Schema({
+    name: {
         type: String,
+        default: "Anubhaw",
         required: true
     },
-    Registration_number: {
+    reg_no: {
         type: String,
         unique: true,
         required: true
@@ -26,7 +26,7 @@ const userSchema = new Schema({
         default: "Basic",
         required: true
     },
-    phone_number: {
+    phone_no: {
         type: String,
         required: true,
         validate: {
@@ -36,11 +36,11 @@ const userSchema = new Schema({
             message: props => `${props.value} is not a valid phone number!`
         }
     },
-    room_number: {
+    room_no: {
         type: String,
         required: true,
     },
-    email: {
+    email_id: {
         type: String,
         required: true,
         unique: true,
@@ -53,6 +53,7 @@ const userSchema = new Schema({
     }
 });
 
-const User = mongoose.model("User", userSchema)
-module.exports = User;
+const Users = mongoose.model('users', userSchema);
+
+module.exports = Users;
 
